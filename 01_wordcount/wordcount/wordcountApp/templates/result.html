@@ -1,0 +1,14 @@
+<h1>당신이 적은 글의 단어는 총 {{total}}개이구요</h1>
+
+<a href="{% url 'home' %}">다시하기</a>
+
+<h1>입력받은 텍스트</h1>
+<br>
+{{fulltext}}
+<br>
+<h1> 단어 수</h1>
+<br>
+{% for word, countTotal in dictionary %}
+{{ word }} : {{countTotal}}
+<br>
+{% endfor %}

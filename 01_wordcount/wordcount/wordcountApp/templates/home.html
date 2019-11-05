@@ -1,0 +1,9 @@
+<h1>워드카운터 메인페이지입니다.</h1>
+
+<a href="{% url 'about' %}">ABOUT</a>
+
+<form action="{% url 'result' %}">
+    <textarea name="fulltext" id="memoid" cols="50" rows="50"></textarea>
+    <br>
+    <input type="submit" value="Count">
+</form>

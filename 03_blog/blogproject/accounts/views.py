@@ -33,14 +33,11 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-
             return redirect('home')
-
         else:
             return render(request, "login.html", {
                 'error': 'Username or Password is incorrect.',
             })
-
     else:
         return render(request, "login.html")
 

@@ -1,0 +1,4 @@
+include LICSENSE
+include README.rst
+recursive-include login/templates *
+recursive-include login/migrations *

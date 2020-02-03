@@ -5,6 +5,11 @@
     <title>crud 연습</title>
 </head>
 <body>
+
+    <a href="{% url  'newblog' %}">글쓱기 </a>
+
+
+
     {% for blog in blogs %}
     <h2>{{ blog.title }}</h2>
     <p>{{ blog.body }}</p>

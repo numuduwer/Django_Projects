@@ -26,6 +26,22 @@ def create(request):
         form = NewBlog()
         return render(request, 'new.html', {'form': form})
 
+def update(request, pk):
+    #어떤 블로그를 수정할지  블로그 객체를 가져오기
+    blog = get_object_or_404(Blog, pk = pk)
+    #해당하는 블로그 객체의 입력공간 
+    form = NewBlog(request.POST, instance =blog)
+
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+    
+    return render(request, 'new.html', {'form':form})
+
+def delete(request, pk):
+    blog = get_object_or_404(Blog, pk = pk)
+    blog.delete()
+    return redirect('home')
 
 
 
